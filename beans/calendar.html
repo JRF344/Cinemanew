@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendario</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="pretty2.css">
+</head>
+<body>
+	<table align="center">
+		<tr>
+			<td>L</td>
+			<td>M</td>
+			<td>M</td>
+			<td>J</td>
+			<td>V</td>
+		</tr>
+		<tr>
+			<td><button id="1">1</button></td>
+			<td><button id="2">2</button></td>
+			<td><button id="3">3</button></td>
+			<td><button id="4">4</button></td>
+			<td><button id="5">5</button></td>
+		</tr>
+		<tr>
+			<td><button id="6">6</button></td>
+			<td><button id="7">7</button></td>
+			<td><button id="8">8</button></td>
+			<td><button id="9">9</button></td>
+			<td><button id="10">10</button></td>
+		</tr>
+		<tr>
+			<td><button id="11">11</button></td>
+			<td><button id="12">12</button></td>
+			<td><button id="13">13</button></td>
+			<td><button id="14">14</button></td>
+			<td><button id="15">15</button></td>
+		</tr>
+		<tr>
+			<td><button id="16">16</button></td>
+			<td><button id="17">17</button></td>
+			<td><button id="18">18</button></td>
+			<td><button id="19">19</button></td>
+			<td><button id="20">20</button></td>
+		</tr>
+		<tr>
+			<td><button id="21">21</button></td>
+			<td><button id="22">22</button></td>
+			<td><button id="23">23</button></td>
+			<td><button id="24">24</button></td>
+			<td><button id="25">25</button></td>
+		</tr>
+		<tr>
+			<td><button id="26">26</button></td>
+			<td><button id="27">27</button></td>
+			<td><button id="28">28</button></td>
+			<td><button id="29">29</button></td>
+			<td><button id="30">30</button></td>
+		</tr>
+		<tr>
+			<td><button id="31">31</button></td>
+		</tr>
+		<tr>
+			<td colspan="5"><input type="" id="currmonth" placeholder="Mes"><input type="" id="curryear" placeholder="Año"></td>
+		</tr>
+		<tr>
+			<td colspan="5"><button>Cargar</button></td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		function agregaimgdepeliculaaldiv(imgenbase64,iddeldiv,iddelapelicula) //la funcion recive la imagenbas64, la id del div o el tf y la id de la peli
+		 { document.getElementById(iddeldiv).innerHTML += "<img src='"+imgenbase64+"' height='42' width='42' id= '"+iddelapelicula+"' onclick='loadseats('"+iddelapelicula+"')'>" }
+function loadmoviesbydateandyear() //La funcion busca en la base de datos las peliculas que tengas el dia seleccionado y da la base 64 de la imagen 
+{ let clasepeliculainstanciada = new Movie(); clasepeliculainstanciada.moviesbydateandyear(document.getElementById("currmonth").value,document.getElementById("curryear").value).then(function(response) {
+for(var element in response) { var fechadelapeliculaactual = new Date(response[element].DATE); agregaimgdepeliculaaldiv(response[element].IMAGE,fechadelapeliculaactual.getDate() + 1,response[element]._id);
+}
+
+
+
+}, function(error) { console.log(error); });
+
+}
+	</script>
+</body>
+</html>

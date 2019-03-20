@@ -1,0 +1,21 @@
+table{
+	height: 100%;
+	width: 80%;
+}
+button{
+	height: 70PX;
+	width: 100%;
+	background:  #f9e4b7;
+	border: 0;
+	border-radius: 2px;
+	transition: 1s;
+}
+div{
+	margin: auto;
+	background: #bf0010;
+	height: 100%;
+	width: 80%;
+}
+body{
+	background: radial-gradient(#484343, #262121);	
+}

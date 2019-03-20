@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Agregar</title>
+
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="pretty.css">
+	
+</head>
+<body>
+	<div class="box" align="center">
+		<div class="tit">
+	        <h1>Agregar una Pelicula</h1>
+	        <hr>
+	    </div>
+	    <p>Por Favor llene todas las casillas</p>
+	    <p>Nombre</p><input required type="text" class="regin" id="name">
+	    <p>Duracion</p><input required type="text" class="regin" id="duration">
+	    <p>Genero</p><input required type="text" class="regin" id="genre">
+	    <p>Idioma Audio</p><input required type="text" class="regin" id="languageaudio">
+	    <p>Idioma Subtitulos</p><input required type="text" class="regin" id="languagesub">
+	    <p>Sinopsis</p><input required type="text" class="syn" id="synopsis">
+	    <p>Grado</p><input required type="text" class="regin" id="rating">
+	    <p>Precio</p><input required type="text" class="regin" id="price">
+	    <p>Hora de Inicio</p><input required type="text" class="regin" id="hour">
+	    <p>Fecha</p><input required type="date" class="regin" id="date">
+	    <p>Minuto de Inicio</p><input required type="text" class="regin" id="minute">
+	    <p>Imagen</p><input type="file" id="imgmovie">
+	    <p>Activo/Inactivo</p>
+	    <select required="yes" class="see" id="state">
+		     <option>Activo</option>
+		     <option>Inactivo</option>
+	    </select>
+	    <button onclick="botonguardarclick()">Guardar</button>
+	</div>
+    <script src="jquery-3.2.1.min.js"></script>
+	<script src="movieclassfrontend.js"></script>
+
+</body>
+</html>

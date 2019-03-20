@@ -1,0 +1,91 @@
+body{
+	background: radial-gradient(#484343, #262121),no-repeat;	
+}
+.box{
+	font-family: 'Nunito', sans-serif;
+	background: #bf0010;
+	color: #f9e4b7;
+	width: 40%;
+	border-radius: 10px;
+	margin: auto;
+	transition: 2s;
+}
+.regin{
+	height: 10px;
+	width: 100px;
+	transition: 2s;
+	background: #f9e4b7;
+	border: 0;
+	color: #bf0010;
+}
+.syn{
+	height: 10px;
+	width: 100px;
+	transition: 2s;
+	background: #f9e4b7;
+	border: 0;
+	color: #bf0010;
+}
+.see{
+	background: #f9e4b7;
+	border: 0;
+}
+hr{
+	width: 75%;
+	color: #f9e4b7;
+	background: #f9e4b7;
+    height: 1px;
+    transition: 2s;
+}
+.tit:hover{
+	transition: 2s;
+	width: 80%;
+	color: #f1f5c8;
+	font-size: 15pt;
+}
+.tit{
+	transition: 2s;
+	width: 100%;
+	color: #f1f5c8;
+	font-size: 12pt;
+}
+.regin:hover{
+		transition: 2s;
+	font-size: 15pt;
+	width: 150px;
+	height: 40px;
+	color: #bf0010;
+}
+.regin:focus{
+		transition: 2s;
+	font-size: 15pt;
+	width: 150px;
+	height: 40px;
+	color: #bf0010;
+}
+.syn:hover{
+	transition: 2s;
+	overflow: scroll;
+	font-size: 15pt;
+	width: 150px;
+	height: 100px;
+	color: #bf0010;
+}
+.syn:focus{
+	transition: 2s;
+	overflow: scroll;
+	font-size: 15pt;
+	width: 150px;
+	height: 100px;
+	color: #bf0010;
+}
+#imgmovie{
+
+}
+button:hover{
+	transition: 0.5s;
+	background: #ae0000;
+	border-radius: 5px;
+	border:0;
+	color: #f1f5c8
+}

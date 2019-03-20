@@ -1,0 +1,216 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var movie = new Schema({
+    NAME: String,
+	DURATIONMINUTES: Number,
+	GENRE: String,
+	LANGUAGEAUDIO: String,
+	LANGUAGESUBS: String,
+	SYNOPSIS: String,
+	RATING: String,
+	PRICE: Number,
+	HOURSTART: Number,
+	DATE: Date,
+	MINUTESTART: Number,
+		SEATS: {
+	    A1:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        A2:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        A3:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        A4:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        A5:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        A6:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+
+        B1:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        B2:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        B3:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        B4:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        B5:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        B6:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        C1:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        C2:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        C3:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        C4:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        C5:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        C6:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number,
+	    },
+        D1:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        D2:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        D3:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        D4:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        D5:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+
+         E1:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        E2:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        E3:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        E4:{
+            NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number
+        },
+        F1:{ 
+        	NOMBREESTUADIANTE:String, 
+        	SECCION:String, 
+        	CARNET:Number 
+        }, 
+        F2:{ 
+        	NOMBREESTUADIANTE:String, 
+        	SECCION:String, 
+        	CARNET:Number 
+        }, 
+        F3:{ 
+        	NOMBREESTUADIANTE:String, 
+        	SECCION:String, 
+        	CARNET:Number 
+        }, 
+        F4:{ 
+        	NOMBREESTUADIANTE:String, 
+        	SECCION:String, 
+        	CARNET:Number 
+        },
+        G1:{ 
+        	NOMBREESTUADIANTE:String, 
+        	SECCION:String, 
+        	CARNET:Number 
+        }, 
+        G2:{ 
+        	NOMBREESTUADIANTE:String, 
+        	SECCION:String, 
+        	CARNET:Number 
+        }, 
+        G3:{
+        	NOMBREESTUADIANTE:String, 
+        	SECCION:String, 
+        	CARNET:Number 
+        },
+        G4:{ 
+        	NOMBREESTUADIANTE:String, 
+        	SECCION:String, 
+        	CARNET:Number 
+        },
+        H1:{ 
+        	NOMBREESTUADIANTE:String, 
+            SECCION:String, 
+            CARNET:Number 
+        }, 
+        H2:{ 
+        	NOMBREESTUADIANTE:String,
+            SECCION:String,
+            CARNET:Number 
+        }, 
+        H3:{ 
+        	NOMBREESTUADIANTE:String, 
+            SECCION:String, 
+            CARNET:Number 
+        }, 
+        H4:{
+            NOMBREESTUADIANTE:String, 
+            SECCION:String, 
+            CARNET:Number 
+        }}, 
+            IMAGEN: String,
+            ESTADO: Number 
+        });
+         module.exports = mongoose.model('Pelicula',pelicula)

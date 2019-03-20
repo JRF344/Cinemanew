@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asientos</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="pretty3.css">
+  <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body onload="alcargar()">
+	<div align="center">
+<div id="datosdelapelicula"></div>
+
+		<table align="center">
+			<tr>
+				<td><button id="H1" onclick="pop(this.id)">H1</button></td>
+				<td><button id="H2" onclick="pop(this.id)">H2</button></td>
+				<td><button id="H3" onclick="pop(this.id)">H3</button></td>
+				<td><button id="H4" onclick="pop(this.id)">H4</button></td>
+			</tr>
+			<tr>
+				<td><button id="G1" onclick="pop(this.id)">G1</button></td>
+				<td><button id="G2" onclick="pop(this.id)">G2</button></td>
+				<td><button id="G3" onclick="pop(this.id)">G3</button></td>
+				<td><button id="G4" onclick="pop(this.id)">G4</button></td>
+			</tr>
+			<tr>
+				<td><button id="F1" onclick="pop(this.id)">F1</button></td>
+				<td><button id="F2" onclick="pop(this.id)">F2</button></td>
+				<td><button id="F3" onclick="pop(this.id)">F3</button></td>
+				<td><button id="F4" onclick="pop(this.id)">F4</button></td>
+			</tr>
+			<tr>
+				<td><button id="E1" onclick="pop(this.id)">E1</button></td>
+				<td><button id="E2" onclick="pop(this.id)">E2</button></td>
+				<td><button id="E3" onclick="pop(this.id)">E3</button></td>
+				<td><button id="E4" onclick="pop(this.id)">E4</button></td>
+			</tr>
+			<tr>
+				<td><button id="D1" onclick="pop(this.id)">D1</button></td>
+				<td><button id="D2" onclick="pop(this.id)">D2</button></td>
+				<td><button id="D3" onclick="pop(this.id)">D3</button></td>
+				<td><button id="D4" onclick="pop(this.id)">D4</button></td>
+				<td>     </td>
+				<td><button id="D5" onclick="pop(this.id)">D5</button></td>
+			</tr>
+			<tr>
+				<td><button id="C1" onclick="pop(this.id)">C1</button></td>
+				<td><button id="C2" onclick="pop(this.id)">C2</button></td>
+				<td><button id="C3" onclick="pop(this.id)">C3</button></td>
+				<td><button id="C4" onclick="pop(this.id)">C4</button></td>
+				<td>     </td>
+				<td><button id="C5" onclick="pop(this.id)">C5</button></td>
+				<td><button id="C6" onclick="pop(this.id)">C6</button></td>
+			</tr>
+			<tr>
+				<td><button id="B1" onclick="pop(this.id)">B1</button></td>
+				<td><button id="B2" onclick="pop(this.id)">B2</button></td>
+				<td><button id="B3" onclick="pop(this.id)">B3</button></td>
+				<td><button id="B4" onclick="pop(this.id)">B4</button></td>
+				<td>     </td>
+				<td><button id="B5" onclick="pop(this.id)">B5</button></td>
+				<td><button id="B6" onclick="pop(this.id)">B6</button></td>
+			</tr>
+			<tr>
+				<td><button id="A1" onclick="pop(this.id)">A1</button></td>
+				<td><button id="A2" onclick="pop(this.id)">A2</button></td>
+				<td><button id="A3" onclick="pop(this.id)">A3</button></td>
+				<td><button id="A4" onclick="pop(this.id)">A4</button></td>
+				<td>     </td>
+				<td><button id="A5" onclick="pop(this.id)">A5</button></td>
+				<td><button id="A6" onclick="pop(this.id)">A6</button></td>
+			</tr>
+		</table>
+	</div>
+    <script>
+        var clk;
+        var txt;
+        var person;
+        var carne;
+        var sect;
+        function pop(clickid) {
+            clk=clickid;
+    person=prompt("Reservar asiento "+ clk+"\nNombre:");
+  txt = "Accion Cancelada";
+  if (person == null || person == "") {
+    
+      alert(txt);
+  } else {
+    var carne = prompt("Carnè:");
+      if (carne == null || carne == "") {
+          alert(txt);
+          
+      }
+      else{
+              var sect = prompt("Secciòn:");
+          if (sect == null || sect == "") {
+              alert(txt);
+          }
+          else{
+
+guardaralbe();
+
+              alert("Asiento "+clk+" reservado")
+          }
+  }
+      
+}
+
+function guardaralbe()
+{
+
+var peliculaencache = JSON.parse(localStorage.getItem('peliculaseleccionada')) 
+switch(clk){ 
+    case "A1": peliculaencache[0].SEATS.A1.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.A1.ID= carne; 
+               peliculaencache[0].SEATS.A1.SECTION= sect; 
+        break;
+    case "A2": peliculaencache[0].SEATS.A2.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.A2.ID= carne; 
+               peliculaencache[0].SEATS.A2.SECTION= sect; 
+        break;
+    case "A3": peliculaencache[0].SEATS.A3.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.A3.ID= carne; 
+               peliculaencache[0].SEATS.A3.SECTION= sect; 
+        break;
+    case "A4": peliculaencache[0].SEATS.A4.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.A4.ID= carne; 
+               peliculaencache[0].SEATS.A4.SECTION= sect; 
+        break;
+    case "A5": peliculaencache[0].SEATS.A5.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.A5.ID= carne; 
+               peliculaencache[0].SEATS.A5.SECTION= sect; 
+        break;
+    case "A6": peliculaencache[0].SEATS.A6.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.A6.ID= carne; 
+               peliculaencache[0].SEATS.A6.SECTION= sect; 
+        break;
+        
+    case "B1": peliculaencache[0].SEATS.B1.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.B1.ID= carne; 
+               peliculaencache[0].SEATS.B1.SECTION= sect; 
+        break;
+    case "B2": peliculaencache[0].SEATS.B2.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.B2.ID= carne; 
+               peliculaencache[0].SEATS.B2.SECTION= sect; 
+        break;
+    case "B3": peliculaencache[0].SEATS.B3.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.B3.ID= carne; 
+               peliculaencache[0].SEATS.B3.SECTION= sect; 
+        break;
+    case "B4": peliculaencache[0].SEATS.B4.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.B4.ID= carne; 
+               peliculaencache[0].SEATS.B4.SECTION= sect; 
+        break;
+    case "B5": peliculaencache[0].SEATS.B5.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.B5.ID= carne; 
+               peliculaencache[0].SEATS.B5.SECTION= sect; 
+        break;
+    case "B6": peliculaencache[0].SEATS.B6.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.B6.ID= carne; 
+               peliculaencache[0].SEATS.B6.SECTION= sect; 
+        break;
+        
+    case "C1": peliculaencache[0].SEATS.C1.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.C1.ID= carne; 
+               peliculaencache[0].SEATS.C1.SECTION= sect; 
+        break;
+    case "C2": peliculaencache[0].SEATS.C2.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.C2.ID= carne; 
+               peliculaencache[0].SEATS.C2.SECTION= sect; 
+        break;
+    case "C3": peliculaencache[0].SEATS.C3.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.C3.ID= carne; 
+               peliculaencache[0].SEATS.C3.SECTION= sect; 
+        break;
+    case "C4": peliculaencache[0].SEATS.C4.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.C4.ID= carne; 
+               peliculaencache[0].SEATS.C4.SECTION= sect; 
+        break;
+    case "C5": peliculaencache[0].SEATS.C5.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.C5.ID= carne; 
+               peliculaencache[0].SEATS.C5.SECTION= sect; 
+        break;
+    case "C6": peliculaencache[0].SEATS.C6.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.C6.ID= carne; 
+               peliculaencache[0].SEATS.C6.SECTION= sect; 
+        break;
+        
+    case "D1": peliculaencache[0].SEATS.D1.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.D1.ID= carne; 
+               peliculaencache[0].SEATS.D1.SECTION= sect; 
+        break;
+    case "D2": peliculaencache[0].SEATS.D2.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.D2.ID= carne; 
+               peliculaencache[0].SEATS.D2.SECTION= sect; 
+        break;
+    case "D3": peliculaencache[0].SEATS.D3.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.D3.ID= carne; 
+               peliculaencache[0].SEATS.D3.SECTION= sect; 
+        break;
+    case "D4": peliculaencache[0].SEATS.D4.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.D4.ID= carne; 
+               peliculaencache[0].SEATS.D4.SECTION= sect; 
+        break;
+    case "D5": peliculaencache[0].SEATS.D5.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.D5.ID= carne; 
+               peliculaencache[0].SEATS.D5.SECTION= sect; 
+        break;
+ 
+    case "E1": peliculaencache[0].SEATS.E1.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.E1.ID= carne; 
+               peliculaencache[0].SEATS.E1.SECTION= sect; 
+        break;
+    case "E2": peliculaencache[0].SEATS.E2.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.E2.ID= carne; 
+               peliculaencache[0].SEATS.E2.SECTION= sect; 
+        break;
+    case "E3": peliculaencache[0].SEATS.E3.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.E3.ID= carne; 
+               peliculaencache[0].SEATS.E3.SECTION= sect; 
+        break;
+    case "E4": peliculaencache[0].SEATS.E4.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.E4.ID= carne; 
+               peliculaencache[0].SEATS.E4.SECTION= sect; 
+        break;
+    
+    case "F1": peliculaencache[0].SEATS.F1.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.F1.ID= carne; 
+               peliculaencache[0].SEATS.F1.SECTION= sect; 
+        break;
+    case "F2": peliculaencache[0].SEATS.F2.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.F2.ID= carne; 
+               peliculaencache[0].SEATS.F2.SECTION= sect; 
+        break;
+    case "F3": peliculaencache[0].SEATS.F3.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.F3.ID= carne; 
+               peliculaencache[0].SEATS.F3.SECTION= sect; 
+        break;
+    case "F4": peliculaencache[0].SEATS.F4.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.F4.ID= carne; 
+               peliculaencache[0].SEATS.F4.SECTION= sect; 
+        break;
+        
+    case "G1": peliculaencache[0].SEATS.G1.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.G1.ID= carne; 
+               peliculaencache[0].SEATS.G1.SECTION= sect; 
+        break;
+    case "G2": peliculaencache[0].SEATS.G2.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.G2.ID= carne; 
+               peliculaencache[0].SEATS.G2.SECTION= sect; 
+        break;
+    case "G3": peliculaencache[0].SEATS.G3.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.G3.ID= carne; 
+               peliculaencache[0].SEATS.G3.SECTION= sect; 
+        break;
+    case "G4": peliculaencache[0].SEATS.G4.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.G4.ID= carne; 
+               peliculaencache[0].SEATS.G4.SECTION= sect; 
+        break;
+        
+    case "H1": peliculaencache[0].SEATS.H1.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.H1.ID= carne; 
+               peliculaencache[0].SEATS.H1.SECTION= sect; 
+        break;
+    case "H2": peliculaencache[0].SEATS.H2.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.H2.ID= carne; 
+               peliculaencache[0].SEATS.H2.SECTION= sect; 
+        break;
+    case "H3": peliculaencache[0].SEATS.H3.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.H3.ID= carne; 
+               peliculaencache[0].SEATS.H3.SECTION= sect; 
+        break;
+    case "H4": peliculaencache[0].SEATS.H4.NAMESTUDENT= person; 
+               peliculaencache[0].SEATS.H4.ID= carne; 
+               peliculaencache[0].SEATS.H4.SECTION= sect; 
+        break;
+      }
+var peliculainstanciada = new _Movie(
+  peliculaencache[0]._id,
+  peliculaencache[0].NAME,
+    peliculaencache[0].DURATIONMINUTES,
+    peliculaencache[0].GENRE,
+    peliculaencache[0].LANGUAGEAUDIO,
+    peliculaencache[0].LANGUAGESUB,
+    peliculaencache[0].SYNOPSIS,
+    peliculaencache[0].RATING,
+    peliculaencache[0].HOURSTART,
+    peliculaencache[0].DATE,
+    peliculaencache[0].PRICE,
+    peliculaencache[0].MINUTESTART,
+    peliculaencache[0].SEATS,
+    peliculaencache[0].IMAGE,
+    peliculaencache[0].STATE
+
+    )
+    
+    peliculainstanciada.Modificar().then(function(response) {
+  console.log("Success!", response);
+            alert("Butaca Actualizada");
+            
+}, function(error) {
+  console.error("Failed!", error);
+             alert("Error " + error);
+            
+});
+
+  }
+        }
+        function alcargar()
+{
+  var peliculaseleccionada = JSON.parse(localStorage.getItem("peliculaseleccionada"))
+
+  document.getElementById("datosdelapelicula").innerHTML= "Nombre de la pelicula: " + peliculaseleccionada[0].NAME + "<hr> Inicia: " + peliculaseleccionada[0].HOURSTART + " del dia: " + peliculaseleccionada[0].DATE
+
+        var peliculaseleccionada= JSON.parse(localStorage.getItem("peliculaseleccionada"));
+         if(peliculaseleccionada[0].SEATS.A1.ID != null)
+         {
+             document.getElementById("A1").style.backgroundColor = "gray";
+              document.getElementById("A1").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.A2.ID != null)
+         {
+             document.getElementById("A2").style.backgroundColor = "gray";
+              document.getElementById("A2").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.A3.ID != null)
+         {
+             document.getElementById("A3").style.backgroundColor = "gray";
+              document.getElementById("A3").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.A4.ID != null)
+         {
+             document.getElementById("A4").style.backgroundColor = "gray";
+              document.getElementById("A4").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.A5.ID != null)
+         {
+             document.getElementById("A5").style.backgroundColor = "gray";
+              document.getElementById("A5").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.A6.ID != null)
+         {
+             document.getElementById("A6").style.backgroundColor = "gray";
+              document.getElementById("A6").disabled = true;
+         }
+
+
+         if(peliculaseleccionada[0].SEATS.B1.ID != null)
+         {
+             document.getElementById("B1").style.backgroundColor = "gray";
+              document.getElementById("B1").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.B2.ID != null)
+         {
+             document.getElementById("B2").style.backgroundColor = "gray";
+              document.getElementById("B2").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.B3.ID != null)
+         {
+             document.getElementById("B3").style.backgroundColor = "gray";
+              document.getElementById("B3").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.B4.ID != null)
+         {
+             document.getElementById("B4").style.backgroundColor = "gray";
+              document.getElementById("B4").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.B5.ID != null)
+         {
+             document.getElementById("B5").style.backgroundColor = "gray";
+              document.getElementById("B5").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.B6.ID != null)
+         {
+             document.getElementById("B6").style.backgroundColor = "gray";
+              document.getElementById("B6").disabled = true;
+         }
+
+         if(peliculaseleccionada[0].SEATS.C1.ID != null)
+         {
+             document.getElementById("C1").style.backgroundColor = "gray";
+              document.getElementById("C1").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.C2.ID != null)
+         {
+             document.getElementById("C2").style.backgroundColor = "gray";
+              document.getElementById("C2").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.C3.ID != null)
+         {
+             document.getElementById("C3").style.backgroundColor = "gray";
+              document.getElementById("C3").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.C4.ID != null)
+         {
+             document.getElementById("C4").style.backgroundColor = "gray";
+              document.getElementById("C4").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.C5.ID != null)
+         {
+             document.getElementById("C5").style.backgroundColor = "gray";
+              document.getElementById("C5").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.C6.ID != null)
+         {
+             document.getElementById("C6").style.backgroundColor = "gray";
+              document.getElementById("C6").disabled = true;
+         }
+
+         if(peliculaseleccionada[0].SEATS.D1.ID != null)
+         {
+             document.getElementById("D1").style.backgroundColor = "gray";
+              document.getElementById("D1").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.D2.ID != null)
+         {
+             document.getElementById("D2").style.backgroundColor = "gray";
+              document.getElementById("D2").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.D3.ID != null)
+         {
+             document.getElementById("D3").style.backgroundColor = "gray";
+              document.getElementById("D3").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.D4.ID != null)
+         {
+             document.getElementById("D4").style.backgroundColor = "gray";
+              document.getElementById("D4").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.D5.ID != null)
+         {
+             document.getElementById("D5").style.backgroundColor = "gray";
+              document.getElementById("D5").disabled = true;
+         }
+         
+         if(peliculaseleccionada[0].SEATS.E1.ID != null)
+         {
+             document.getElementById("E1").style.backgroundColor = "gray";
+              document.getElementById("E1").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.E2.ID != null)
+         {
+             document.getElementById("E2").style.backgroundColor = "gray";
+              document.getElementById("E2").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.E3.ID != null)
+         {
+             document.getElementById("E3").style.backgroundColor = "blue";
+              document.getElementById("E3").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.E4.ID != null)
+         {
+             document.getElementById("E4").style.backgroundColor = "gray";
+              document.getElementById("E4").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.F1.ID != null)
+         {
+             document.getElementById("F1").style.backgroundColor = "gray";
+              document.getElementById("F1").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.F2.ID != null)
+         {
+             document.getElementById("F2").style.backgroundColor = "gray";
+              document.getElementById("F2").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.F3.ID != null)
+         {
+             document.getElementById("F3").style.backgroundColor = "gray";
+              document.getElementById("F3").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.F4.ID != null)
+         {
+             document.getElementById("F4").style.backgroundColor = "gray";
+              document.getElementById("F4").disabled = true;
+         }
+
+         if(peliculaseleccionada[0].SEATS.G1.ID != null)
+         {
+             document.getElementById("G1").style.backgroundColor = "gray";
+              document.getElementById("G1").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.G2.ID != null)
+         {
+             document.getElementById("G2").style.backgroundColor = "gray";
+              document.getElementById("G2").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.G3.ID != null)
+         {
+             document.getElementById("G3").style.backgroundColor = "gray";
+              document.getElementById("G3").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.G4.ID != null)
+         {
+             document.getElementById("G4").style.backgroundColor = "gray";
+              document.getElementById("G4").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.H1.ID != null)
+         {
+             document.getElementById("H1").style.backgroundColor = "gray";
+              document.getElementById("H1").disabled = true;
+         }
+        
+         if(peliculaseleccionada[0].SEATS.H2.ID != null)
+         {
+             document.getElementById("H2").style.backgroundColor = "gray";
+              document.getElementById("H2").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.H3.ID != null)
+         {
+             document.getElementById("H3").style.backgroundColor = "gray";
+              document.getElementById("H3").disabled = true;
+         }
+         if(peliculaseleccionada[0].SEATS.H4.ID != null)
+         {
+             document.getElementById("H4").style.backgroundColor = "gray";
+              document.getElementById("H4").disabled = true;
+         }
+    }
+    </script>
+    <script src="movieclassfrontend.js"></script>    
+</body>
+</html>

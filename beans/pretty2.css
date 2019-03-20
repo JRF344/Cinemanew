@@ -1,0 +1,43 @@
+body{
+	background: radial-gradient(#484343, #262121);	
+}
+table{
+	font-family: 'Nunito', sans-serif;
+	background: #bf0010;
+	color: #f9e4b7;
+	width: 40%;
+	border-radius: 10px;
+	margin: auto;
+	font-size: 12pt;
+	transition: 1s;
+}
+button{
+	width: 100%;
+	height: 50px;
+	background:  #f9e4b7;
+	font-size: 12pt;
+	color: #bf0010;
+	border-radius: 1px;
+	border:0;
+	transition:1s;
+}
+button:focus{
+	transition: 1s;
+	color: #f9e4b7;
+	background: #9d0000;
+}
+button:hover{
+	transition: 1s;
+	color: #f9e4b7;
+	background: #bf0010;
+}
+input{
+	width: 50%;
+	height: 30px;
+	background:  #f9e4b7;
+	font-size: 12pt;
+	color: #bf0010;
+	border-radius: 1px;
+	border:0;
+	transition:1s;
+}

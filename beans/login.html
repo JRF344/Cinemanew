@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Agregar</title>
+
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="pretty.css">
+	<script src="jquery-3.2.1.min.js"></script>
+	<script src="movieclassfrontend.js"></script>
+</head>
+<body>
+	<div class="box" align="center">
+		<div class="tit">
+	        <h1>Agregar una Pelicula</h1>
+	        <hr>
+	    </div>
+	    <p>Por Favor llene todas las casillas</p>
+	    <p>Nombre</p><input required type="text" name="NAME" class="regin" id="name">
+	    <p>Duracion</p><input required type="text" name="DURATION" class="regin" id="duration">
+	    <p>Genero</p><input required type="text" name="GENRE" class="regin" id="genre">
+	    <p>Idioma Audio</p><input required type="text" name="LANGUAGEAUDIO" class="regin" id="languageaudio">
+	    <p>Idioma Subtitulos</p><input required type="text" name="LANGUAGESUBS" class="regin" id="languagesub">
+	    <p>Sinopsis</p><input required type="text" name="SYNOPSIS" class="syn" id="synopsis">
+	    <p>Grado</p><input required type="text" name="RATING" class="regin" id="rating">
+	    <p>Precio</p><input required type="text" name="PRICE" class="regin" id="price">
+	    <p>Hora de Inicio</p><input required type="text" name="HOURSTART" class="regin" id="hour">
+	    <p>Fecha</p><input required type="text" name="DATE" class="regin" id="date">
+	    <p>Minuto de Inicio</p><input required type="text" name="MINUTESTART" class="regin" id="minute">
+	    <p>Imagen</p><input required type="file" name="IMAGE" id="imgmovie">
+	    <p>Activo/Inactivo</p>
+	    <select required="yes" class="see" id="state">
+		     <option>Activo</option>
+		     <option>Inactivo</option>
+	    </select>
+	    <button onclick="botonguardarclick()">Guardar</button>
+	</div>
+	<script type="text/javascript">
+		movmoviesbydateandyear(month,year){
+	var package=this;
+	var filteredmovievector=[];
+	return new Promise(function(resolve, reject){
+		try{
+			var xhr=new XMLHttpRequest();
+			xhr.open('POST', 'http://localhost:8080/api/selectmov	ie');
+			xhr.setRequestHeader('Content-Type','application/json');
+			xhr.onload=function(){
+				if(xhr.status === 200){
+					var movies=JSON.parse(xhr.responseText);
+					for(var element in movies){
+						var moviedate=new Date(movies[element].DATE);
+						if((moviedate.getMonth()+1==month) &&(moviedate.getFullYear()==year)){
+							filteredmovievector.push(movies[element]);
+						}
+					}
+					resolve(filteredmovievector);
+				}
+				else{
+					reject(xhr);
+				}
+			};
+			xhr.send(JSON.stringify(package));
+		}
+		catch(err){
+			reject(err.message);
+		}
+	});
+}
+	</script>
+</body>
+</html>
