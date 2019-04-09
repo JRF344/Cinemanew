@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Agregar</title>
+	<script src="jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="visual.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<div class="wrap">
+		<div class="main">
+			<a href="main.html"><button class="back"><img class="back" src="left-arrow.svg" height="20px" align="left"></button></a>
+			<h1 class="fancy">Agregar un Proyecto</h1>
+			<h2>Nombre</h2>
+			<input type="text" id="NAME" >
+			<h2>Descripcion</h2>
+			<input type="text" class="desc" id="DESC" >
+			<h2>IDs de los integrantes</h2>
+			<h3>Introduzca el carnè de todos los integrantes del grupo.</h3>
+			<input type="number" id="ID1" maxlength="7">
+			<input type="number" id="ID2" maxlength="7">
+			<input type="number" id="ID3" maxlength="7">
+			<input type="number" id="ID4" maxlength="7">
+			<h2>Icono</h2>
+			<h3>Utilize imagenes de mas de 300x300px.</h3>
+			<!--IMG LIVE PREVIEW-->
+  				<input type='file' id="imgInp" />
+  				<img id="imga" src="#" alt="Su Icono" align="center" />
+  			<!--END PREVIEW-->
+  			<hr>
+  			<button class="save" onclick="saveclick()"><img src="Orion_edit-backup.svg" height="30" width="30"></button>
+		</div>
+		<div class="push"></div>
+	</div>
+	<hr>
+	<div class="footer">
+	<footer>© <a class="ge" href="https://twitter.com/joshrf344">JoshRF344</a>
+	<span id="year">
+	</footer>
+	<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+</span>
+</footer>
+</div>
+<script src="voted_front_end.js"></script>
+</body>
+</html>

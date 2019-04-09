@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registracion</title>
+		<script src="jquery-3.2.1.min.js"></script>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="visual.css">
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="main">
+				<a href="main.html"><button class="back"><img class="back" src="left-arrow.svg" height="20px" align="left"></button></a>
+				<h1 align="center">Crea Tu Usuario</h1>
+				<input type="text" id="NAME" placeholder="  Nombre" class="sign">
+				<input type="text" id="STUDID" placeholder="  Carnè" class="sign" maxlength="7">
+				<input type="text" id="PASS" placeholder="  Contraseña" class="sign">
+				<hr width="0" border="0">
+				<input type='file' id="imgInp" />
+  				<img id="imga" src="#" alt="Su Icono" align="center" class="pfp" />
+				<hr width="0" border="0">
+				<button onclick="buttonsave()">Subir</button> <!--ERR-->
+			</div>
+			<hr>
+			
+			<div class="push"></div>
+		</div>
+		<div class="footer"></div>
+		<footer>© <a class="ge" href="https://twitter.com/joshrf344">JoshRF344</a>
+		<span id="year">
+		</footer>
+		<script type="text/javascript">
+			//saves the account
+			function sign(){
+			let curradm = new _Adm('0',
+	         	   document.getElementById("NAME").value,
+	         	   document.getElementById("STUDID").value,
+	               document.getElementById("PASS").value,
+	       		   base64img
+	         
+	         );
+	         curradm.Save(curradm).then(function(response) {
+	   console.log("Success!", response);
+	             alert("Cuenta creada con exito");
+	 
+	 }, function(error) {
+	   console.error("Failed!", error);
+	              alert("Error " + error);
+	              
+	 });}
+		</script>
+		<script>
+			//gets the current year to display at the footer
+	    	document.getElementById("year").innerHTML = new Date().getFullYear();
+	    </script>
+	    <script src="admin_front_end.js"></script>
+	</body>
+</html>

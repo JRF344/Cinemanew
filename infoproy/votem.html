@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Calendario Cine</title>
+	<link rel="stylesheet" href="visual.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
+site:
+
+</head>
+<body onload="loadmoviesbydateandyear()">
+	<div id="cal">
+		<div class="wrap">
+			<div class="main">
+				<a href="main.html"><button class="back"><img class="back" src="left-arrow.svg" height="20px" align="left"></button></a>
+				<h1 align="center">Crea Tu Usuario</h1>
+				<input type="text" id="NAME" placeholder="  Nombre" class="sign">
+				<input type="text" id="STUDID" placeholder="  Carnè" class="sign" maxlength="7">
+				<input type="text" id="PASS" placeholder="  Contraseña" class="sign">
+				<hr width="0" border="0">
+				<input type="file" name="" height="30">
+				<img id="imga" src="#" alt="Su Icono" align="center" />
+				<hr width="0" border="0">
+				<button onclick="sign()">Subir</button>
+			</div>
+			<hr>
+			
+			<div class="push"></div>
+		</div>
+		<div class="footer"></div>
+		<footer>© <a class="ge" href="https://twitter.com/joshrf344">JoshRF344</a>
+		<span id="year">
+		</footer>
+		<script type="text/javascript">
+			function sign(){
+			let curradm = new _Adm('0',
+	         	   document.getElementById("NAME").value,
+	               document.getElementById("PASS").value,
+	               document.getElementById("imga").value,
+	       		   base64img
+	         
+	         );
+	         curradm.Save(curradm).then(function(response) {
+	   console.log("Success!", response);
+	             alert("Guardado con exito");
+	 
+	 }, function(error) {
+	   console.error("Failed!", error);
+	              alert("Error " + error);
+	              
+	 });}
+		</script>
+		<script>
+	    	document.getElementById("year").innerHTML = new Date().getFullYear();
+	    </script>
+	    <script src="adm.js"></script>
+		</div>
+	</div>
+	
+</body>
+
+<!--<script src="calendar.js">//localstorage.getItem(cookie)</script>
+
+	<script src="adm.js"></script>
+<script>
+var cal = CALENDAR();
+cal.init();
+function addusrimg(imgenbase64,iddeldiv,iddelapelicula){
+        document.getElementById(iddeldiv).innerHTML += "<img src='"+base64img+"' height='42' width='42' id= '"+iddelapelicula+"' onclick='cinemaload('"+iddelapelicula+"')'>"
+    }  
+    function loadmoviesbydateandyear(){
+        let clasepeliculainstanciada = new _Movie();
+        clasepeliculainstanciada.moviesbydateandyear(document.getElementById("mesactual").value,document.getElementById("annoactual").value).then(function(response) {    
+ for(var element in response){
+         var fechadelapeliculaactual = new Date(response[element].DATE);
+         agregaimgdepeliculaaldiv(response[element].IMAGE,fechadelapeliculaactual.getDate() + 1,response[element]._id);
+     }        
+}, function(error) {
+ console.log(error);
+});
+}
+
+function agregaimgdepeliculaaldiv(imgenbase64,iddeldiv,iddelapelicula){  //  Primero llega a la funcion de abajo cargarpeliculasdelmesyanno
+	document.getElementById(iddeldiv).innerHTML += "<img src='"+imgenbase64+"' height='42' width='42' id= "+iddelapelicula+" onclick='cinemaload(\""+iddelapelicula+"\")'>"; //  El fec dentro del getElementById es porque solo reconoce los numeros y hay que concatenar el fec
+    }
+    function cinemaload(id){
+ 	let clasepeliculainstanciada = new _Movie(id);
+    clasepeliculainstanciada.Seleccionarporid().then(function(response) {
+    	localStorage.setItem("peliculaseleccionada",JSON.stringify(response));
+    	location.href="seats.html"
+    }, function(error) {
+    	console.log(error);
+});
+}
+</script>-->
+</body>
+</html>

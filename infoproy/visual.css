@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Flamenco|Raleway');
+body{
+	background: url(bg.svg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	transition: 3s;
+	min-height: 100%;
+  	display: flex;
+ 	flex-direction: column;
+}
+#imga{
+	background-size: contain;
+	width: 100%;
+	transition: 1.5s;
+	border-radius: 3px;
+}
+.save{
+	background: url("bg.svg");
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	fill: white;
+	height: 50px;
+	padding: 5px;
+	width: 100%;
+	transition: 0.5s;
+}
+.save:hover{
+	background: rgba(50,50,50,.6);
+	transition: 0.5s;
+}
+.main{
+	font-family: 'Raleway', sans-serif;
+	margin: auto;
+	width: 80%;
+	padding: 20px;
+	background: white;
+	border-radius: 3px;
+}
+.am{
+	font-family: 'Raleway', sans-serif;
+	border-radius: 3px;
+	margin-top: 10px;
+	margin: auto;
+	width: 80%;
+	padding: 20px;
+	background: white;
+}
+hr{
+	width: 0;
+	border: 0;
+}
+button{
+	background: #dddddd;
+	border: 0;
+	width: 100%;
+	height: 30px;
+	font-family: 'Raleway', sans-serif;
+	transition: 0.5s;
+}
+button:hover{
+	background: #aaaaaa;
+	transition: 0.5s;
+}
+.sepbu{
+	width: 0%;
+}
+.wrap{
+	flex: 1;
+}
+ html {
+  height: 100%;
+}
+footer{
+	overflow: auto;
+	font-family: 'Raleway', sans-serif;
+	padding: 10px;
+	width: 90%;
+	margin: auto;
+	background: white;
+	border-radius: 3px;
+}
+.ge{
+	color: grey;
+	transition: 0.5s;
+}
+.lin{
+	color: black;
+font-family: 'Flamenco', cursive;
+}
+.ge:hover{
+	color: lightblue;
+	transition: 0.5s;
+}
+/*Fancy transparent headers*/
+.fancy{
+	background: url("bg.svg");
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	color: white;
+	padding: 20px;
+	transition: 0.5s;
+}
+a{
+	text-decoration: none;
+}
+/*back button*/
+.back{
+	background: white;
+	border: 0;
+	width: 40px;
+}
+/*add exc*/
+.desc{
+	height: 60px;
+}
+input{
+	transition: 0.5s;
+	width: 100%;
+	background: #eeeeee;
+	border: 0;
+	border-radius: 3px;
+}
+input:hover{
+	transition: 0.5s;
+	background: #cccccc;
+}
+.updbtn{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+.sign{
+	height: 40px;
+	margin-top: 5px;
+}
+@media only screen and (max-width: 600) {
+	body{
+		background-size: 800px 800px; 
+	}
+	.main{
+		width: 100%;
+		height: 100%;
+
+	}
+	}

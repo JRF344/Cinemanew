@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Expo</title>
+		<script src="jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="visual.css">
+	</head>
+	<body onload="first()">
+		<div class="wrap" onload="sec()">
+			<div class="main">
+				<script type="text/javascript">
+					function first(base64img){
+	    		var activ = JSON.parse(localStorage.getItem("activ"))
+	    		document.getElementById("usrdata").innerHTML="Cuenta conectada: "+activ.NAME+"<img src='"+base64img+"' height='5' width='5'>"
+	    		var activ= JSON.parse(localStorage.getItem("activ"));
+	    	}
+				</script>
+				<h1 align="center">Bienvenid@</h1>
+				<h3 align="center">Vota por tu proyecto de Expotec favorito.</h3>
+				<a class="lin" href='vote.html'><button>Ver Proyectos</button></a>
+				<hr align="center" class="sepbu">
+				<a class="lin" onclick="send()"><button>Ingresa Tu Proyecto</button></a>
+			</div>
+			<hr>
+			<div class="am">
+				<h3 align="center">Cantidad de proyectos registrados:</h3>
+				<p align="center"></p>
+				<h3 align="center">Cantidad de votos totales:</h3>
+				<p><script type="text/javascript">
+					
+				</script></p>
+				<p align="center"></p>
+			</div>
+			<div class="push"></div>
+		</div>
+		<div class="footer"></div>
+		<footer>© <a class="ge" href="https://twitter.com/joshrf344">JoshRF344</a>
+		<span id="year">
+		</footer>
+		<script>
+	    	document.getElementById("year").innerHTML = new Date().getFullYear();
+	    </script>
+	</body>
+</html>
